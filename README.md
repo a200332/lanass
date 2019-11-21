@@ -1,6 +1,10 @@
 # LanASS
 [goproxy](https://github.com/snail007/goproxy) 的安卓内网穿透客户端，自带开启ss服务，方便好用，为你的内网开启一扇天窗。
 
+## 下载使用
+
+[点击下载](https://github.com/snail007/lanass/releases)
+
 ## 提示
 为了保证app长时间运行：  
 1.请把app添加到系统白名单   
