@@ -8,5 +8,6 @@
 
 ## 运行界面
 
-![]()
+![](https://github.com/snail007/lanass/blob/master/snapshot/1.png?raw=true)
 
+![](https://github.com/snail007/lanass/blob/master/snapshot/2.png?raw=true)
