@@ -27,6 +27,7 @@ import android.widget.Toast;
 import snail007.proxysdk.Proxysdk;
 
 public class MainActivity extends AppCompatActivity {
+    
     TextView server, port, key, wspwd, ssport, sspwd, status, poweredBy;
     Button cmdstart, cmdstop;
     AppCompatActivity app;
@@ -127,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
                     });
                     return;
                 }
-                String args = String.format("client -P %s:%s -T ws --ws-password %s --timeout 15000 --k %s", ip, portArg, pwd, clientKey);
-                String args1 = String.format("sps --disable-http --disable-socks -t tcp -h aes-256-cfb -j %s -p 127.0.0.1:%s --timeout 15000", sspwdArg, ssportArg);
+                String args = String.format("client -P %s:%s -T ws --ws-password %s --timeout 15000 --k %s --nolog", ip, portArg, pwd, clientKey);
+                String args1 = String.format("sps --disable-http --disable-socks -t tcp -h aes-256-cfb -j %s -p 127.0.0.1:%s --timeout 15000 --nolog", sspwdArg, ssportArg);
                 Log.d(TAG, args);
                 Log.d(TAG, args1);
                 final String err = Proxysdk.start("client", args, "");
