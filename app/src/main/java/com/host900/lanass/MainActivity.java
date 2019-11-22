@@ -109,22 +109,20 @@ public class MainActivity extends AppCompatActivity {
 
     void bindEnvent() {
         poweredBy.setOnClickListener(openURL("https://github.com/snail007/goproxy/"));
-
         cmdstart.setOnClickListener(new View.OnClickListener() {
-            final String ip = server.getText().toString();
-            final String portArg = port.getText().toString();
-            final String pwd = wspwd.getText().toString();
-            final String clientKey = key.getText().toString();
-            final String ssportArg = ssport.getText().toString();
-            final String sspwdArg = sspwd.getText().toString();
-
             @Override
             public void onClick(View v) {
-                if(ip.isEmpty()||portArg.isEmpty()||pwd.isEmpty()||clientKey.isEmpty()||ssportArg.isEmpty()||sspwdArg.isEmpty()){
+                String ip = server.getText().toString();
+                String portArg = port.getText().toString();
+                String pwd = wspwd.getText().toString();
+                String clientKey = key.getText().toString();
+                String ssportArg = ssport.getText().toString();
+                String sspwdArg = sspwd.getText().toString();
+                if (ip.isEmpty() || portArg.isEmpty() || pwd.isEmpty() || clientKey.isEmpty() || ssportArg.isEmpty() || sspwdArg.isEmpty()) {
                     new Handler(Looper.getMainLooper()).post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(app,"请输入必要的参数！", Toast.LENGTH_LONG).show();
+                            Toast.makeText(app, "请输入必要的参数！", Toast.LENGTH_LONG).show();
                         }
                     });
                     return;
@@ -219,14 +217,14 @@ public class MainActivity extends AppCompatActivity {
         poweredBy.getPaint().setAntiAlias(true);//抗锯齿
 
         SharedPreferences config = getSharedPreferences("config", Context.MODE_PRIVATE);
-        final SharedPreferences.Editor editor = config.edit();
+        SharedPreferences.Editor editor = config.edit();
 
-        final String args_server = config.getString("server", "");
-        final String args_port = config.getString("port", "");
-        final String args_key = config.getString("key", "mobile");
-        final String args_wspwd = config.getString("wspwd", "");
-        final String args_ssport = config.getString("ssport", "");
-        final String args_sspwd = config.getString("sspwd", "");
+        String args_server = config.getString("server", "");
+        String args_port = config.getString("port", "30001");
+        String args_key = config.getString("key", "default");
+        String args_wspwd = config.getString("wspwd", "");
+        String args_ssport = config.getString("ssport", "60080");
+        String args_sspwd = config.getString("sspwd", "lanass");
 
         server = findViewById(R.id.editText);
         port = findViewById(R.id.editText2);
